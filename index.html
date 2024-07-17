@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tex tool</title>
+    <style>
+        .text{
+            color: tomato;
+            text-align: center;
+        }
+        .input-box{
+            width: 50%;
+            display: block;
+            margin: 10px auto;
+            height: 150px;
+            border: solid 2px black;
+            border-radius: 10px;
+            padding: 20px;
+            font-size: 40PX;
+        }
+
+        .button-all{
+          margin-top: 20px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+        }
+        .button{
+            margin-left: 25px;
+            background: #000;
+            border-radius: 20px;
+            height: 60px;
+            width: 100px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="text">Enter Text</h1>
+        <input type="text"class="input-box" id="input-box"/>
+        <p class="input-box" id="output"></p>
+    <div class="button-all">
+        <button class="button" onclick="UpperCase()">Upper Case</button>
+        <button class="button" onclick="LowerCase()">Lower Case</button>
+        <button class="button" onclick="Lettercount()">Letter count</button>
+        <button class="button" onclick="Wordcount()">Word Count</button>
+    </div>
+    </div>
+    <script>
+        function UpperCase(){
+            const inputElement = document.getElementById("input-box")
+            const resultElement = document.getElementById("output")
+
+            resultElement.innerText = inputElement.value.toUpperCase()
+        }
+        function LowerCase(){
+            const inputElement = document.getElementById("input-box")
+            const resultElement = document.getElementById("output")
+
+            resultElement.innerText = inputElement.value.toLowerCase()
+        }
+
+        function Lettercount(){
+            const inputElement = document.getElementById("input-box")
+            const resultElement = document.getElementById("output")
+
+            resultElement.innerText = `Total Letter:  ${inputElement.value.length}`
+        }
+
+        function Wordcount(){
+            const inputElement = document.getElementById("input-box")
+            const resultElement = document.getElementById("output")
+
+            resultElement.innerText = `Total Word:  ${inputElement.value.split(" ").length}`
+        }
+    </script>
+</body>
+</html>
